@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <section id="contact-form">
+        <form action="https://sheetdb.io/api/v1/bkrk0bjd6moop" method="post" id="sheetdb-form">
+
+            <div class="contact">
+                <h1 class="c-l-heading">
+                    <font style="border-bottom: 3px solid #1ED98B;">Admissio</font>n Form</h1>
+                <div class="f-name">
+                    <font>Name</font>
+                    <input type="text" name="data[Name]" required placeholder="Full Name" />
+                </div>
+                <div class="f-name">
+                    <font>Father Name</font>
+                    <input type="text" name="data[Father_Name]" required placeholder="Father Name" />
+                </div>
+                <div class="f-name">
+                    <font>Mother Name</font>
+                    <input type="text" name="data[Mother_Name]" required placeholder="Mother Name" />
+                </div>
+                <div class="f-name">
+                    <font>Date of Birth</font>
+                    <input type="text" name="data[Date_of_Birth]" required placeholder="dd-mm-yyyy" />
+                </div>
+                <div class="f-name">
+                    <font>Class</font>
+                    <input type="text" name="data[Class]" required placeholder="eg 1,3 ..." />
+                </div>
+                <div class="f-name">
+                    <font>Adress</font>
+                    <input type="text" name="data[Adress]" required placeholder="House no 1...." />
+                </div>
+
+
+                <div class="f-email">
+                    <font>Email</font>
+                    <input type="email" name="data[Email]" required placeholder="Example@gmail.com" />
+                </div>
+                <div class="f-phone">
+                    <font>Phone</font>
+                    <input type="phone" name="data[Phone]" placeholder="Enter Your Phone Number" required />
+                </div>
+            </div>
+            <button>submit</button>
+        </form>
+    </section>
+    <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+                // you can put any JS code here
+                window.open('thx.html', '_blank');
+
+            });
+        });
+    </script>
+</body>
+
+</html>
